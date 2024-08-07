@@ -177,7 +177,7 @@ public with sharing class VariablesDataTypesOperators {
         Integer milliseconds;
         return null; // Replace null with the variable you used to store the result
     }    
-
+ 
     /**
      * Question 12
      * Calculates the average of three numbers.
