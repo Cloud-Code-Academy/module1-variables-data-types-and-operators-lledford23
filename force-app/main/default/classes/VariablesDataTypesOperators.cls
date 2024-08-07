@@ -18,7 +18,7 @@
  * If statements are not specifically covered in the lesson this module, but review module 2 flow control section for an overview if needed.
  * Resources: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_if_else.htm 
  * 
- * @author Your Name
+ * @author Lindsay Ledford
  */
 
 public with sharing class VariablesDataTypesOperators {
@@ -31,9 +31,15 @@ public with sharing class VariablesDataTypesOperators {
      * @param b The second number.
      * @return The sum of the two numbers, or null if either number is null.
      */
-    public static Integer addition(Integer a, Integer b) {  
-        return null; // Replace null with the variable you used to store the result
-    }
+    
+      public static Integer addition(Integer a, Integer b){  
+          if (a == null || b == null)
+          {
+              return null;
+          }
+              return a + b; // Replace null with the variable you used to store the result
+  
+       }
 
     /**
      * Question 2
@@ -44,7 +50,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return The difference between the two numbers.
      */
     public static Integer subtraction(Integer a, Integer b) {
-        return null; // Replace null with the variable you used to store the result
+        return a - b; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -56,7 +62,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return The product of the two numbers.
      */
     public static Integer multiplication(Integer a, Integer b) {
-        return null; // Replace null with the variable you used to store the result
+        return a * b; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -69,7 +75,11 @@ public with sharing class VariablesDataTypesOperators {
      * @return The quotient of the division, or 0 if the denominator is zero.
      */
     public static Decimal division(Integer a, Integer b) {
-        return null; // Replace null with the variable you used to store the result
+        if (b == 0) {
+            return 0;
+            
+        }
+        return a / b;
     }
 
     /**
@@ -83,7 +93,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the number is even, False otherwise.
      */
     public static Boolean isEven(Integer num) {
-        return null; // Replace null with the variable you used to store the result
+      return Math.mod (num, 2) == 0;
     }
 
     /**
@@ -94,7 +104,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return true if the number is positive, false otherwise.
      */
     public static Boolean isPositive(Integer num) {
-        return null; // Replace null with the variable you used to store the result
+        return num > 0; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -106,7 +116,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return The concatenated string.
      */
     public static String concatenateStrings(String str1, String str2) {
-        return null; // Replace null with the variable you used to store the result
+        return str1 + str2; // Replace null with the variable you used to store the result
     }
 
 	/**
@@ -121,7 +131,7 @@ public with sharing class VariablesDataTypesOperators {
 	 * @return The complete sentence as a single String.
 	 */
 	public static String createSentence(String noun, String verb, String endingPunctuation) {
-		return null; // Replace null with the variable you used to store the result
+		return 'The' + ' ' + noun + ' '+ 'is' + ' ' + verb + endingPunctuation; // Replace null with the variable you used to store the result
 	}
 
     /**
@@ -134,7 +144,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is in the past, False otherwise.
      */
     public static Boolean isDateInPast(Date dt) {
-        return null; // Replace null with the variable you used to store the result
+        return dt < Date.today(); // Replace null with the variable you used to store the result
     }
 
     /**
@@ -147,7 +157,10 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is today or in the future, False otherwise.
      */
     public static Boolean isDateTodayOrFuture(Date dt) {
-        return null; // Replace null with the variable you used to store the result
+        if(dt >= Date.today()){
+            return true;
+        }
+        return false; // Replace null with the variable you used to store the result
     }
 
     /**
